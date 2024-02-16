@@ -2,6 +2,7 @@
 
 if __name__ == "__main__":
     import argparse
+    import dcu
 
     parser = argparse.ArgumentParser(
         prog="dcu2pas",
@@ -12,4 +13,5 @@ if __name__ == "__main__":
     parser.add_argument("files", nargs="+", help="dcu file to decompile")
     args = parser.parse_args()
     for file in args.files:
-        print(file)
+        dcu.decompile(file)
+    print("Done.")
